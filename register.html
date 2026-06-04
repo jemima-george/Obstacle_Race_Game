@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head>
+		<meta charset = "UTF-8"
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Register</title>
+		<link rel="icon" type="image/x-icon" href="..\Images\cheese.png">
+		<link rel="stylesheet" href="../CSS file/mystyle.css">
+
+	</head>
+
+	<body>
+
+		<!-- Navigation bar  -->
+		<div class="topnav">
+		  <a href=".\Index.html">Mouse Obstacle Race game</a>
+		  <a href=".\Instructions to play.html">Instructions to play</a>
+		  <a href=".\Leaderboard.html">Leaderboard</a>
+		  <a href=".\Log-in.html" id="logged-in">Log-in</a>
+		  <a class="active" href=".\Register.html">Register</a>
+		</div>
+
+		<h1 title = "This is the Register page"; id= "register">Register</h1>
+
+		<p id = "account";>Please fill in this form to create an account.</p>
+
+			<!-- Registration form -->
+			<form id="rform">
+			  <div class="rcontainer">
+				<label for="Name"><b>Name :</b></label><br>
+				<input type="text"; id = "rname"; size="10"; minlength="3"; maxlength="32"; placeholder="Enter Name" name="Name" required><br><br><br>
+				
+				<label for="Email"><b>Email :</b></label><br>
+				<input type="email"; id = "remail"; size="10"; minlength="3"; maxlength="320"; placeholder="Enter Email" name="Email" required><br><br><br>
+
+				<label for="psw"><b>Password :</b></label> <br>
+				<input type="password"; id="rpass"; size="10"; minlength="6"; maxlength="32"; placeholder="Enter Password" name="psw" required><br><br><br>
+
+				<label for="phone"><b>Phone Number :</b></label> <br>
+				<input type="tel"; id="rnum"; size="10"; maxlength="12"; name="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" ><br><br><br>
+
+				<button onclick="checkPassword()" type="submit"; id= "submit";>Register</button><br>
+				<label>
+				  <input onclick="storeName()" type="checkbox" checked="checked" name="remember"> Remember me
+				</label>
+			  </div>
+			</form>
+
+			<response id="feedback"  style="color:red;"> Feedback: </response>
+
+			<script src="..\Java Script\checkRegistration.js"></script>
+
+			<script src="..\Java Script\store user.js"></script>
+
+			<script>
+				window.onload = function() {
+					// Check if the user is logged in
+					if (sessionStorage.loggedinUsrName) {
+						let loggedIn = document.getElementById("logged-in");
+						loggedIn.innerHTML = "Player " + sessionStorage.loggedinUsrName;
+					}
+				};
+			</script>
+	</body>
+</html>

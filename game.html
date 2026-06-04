@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8"
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Game</title>
+		<link rel="icon" type="image/x-icon" href="..\Images\cheese.png">
+		<link rel="stylesheet" href="../CSS file/mystyle.css">
+	</head>
+	
+	<body>
+	
+	<!-- Navigation bar  -->
+	<div class="topnav">
+		  <a class="active" href=".\Index.html">Mouse Obstacle Race game</a>
+		  <a href=".\Instructions to play.html">Instructions to play</a>
+		  <a href=".\Leaderboard.html">Leaderboard</a>
+		  <a href=".\Log-in.html" id="logged-in">Log-in</a>
+		  <a href=".\Register.html">Register</a>
+		</div>
+	
+		<!-- Game space -->
+		<div id="game">
+			<div id="world" >
+			<div id="gameoverInstructions">
+				Game Over
+			</div>
+
+			<div id="score">
+				<label class="scoreLabel"><b>Score</b></label><br>
+				<span id="scoreValue">000</span>
+			</div>
+
+			<button id="restartButton" onclick="restartGame()">Restart Game</button>
+
+			<div id="instructions"><b>Click to jump</b><span class="lightInstructions"><b> — Collect the cheese / avoid the cats</b></span></div>
+			</div>
+		</div>
+
+		<script src="..\Java Script\game.js"></script>
+
+	</body>
+</html>

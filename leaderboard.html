@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head>
+		<meta charset = "UTF-8"
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Leaderboard</title>
+		<link rel="icon" type="image/x-icon" href="..\Images\cheese.png">
+		<link rel="stylesheet" href="../CSS file/mystyle.css">
+		<script src="..\Java Script\leaderboard.js" defer></script>
+		<script src="..\Java Script\game.js" defer></script>
+	</head>
+
+
+
+	<body>
+
+		<!-- Navigation bar  -->
+		<div class="topnav">
+		  <a href=".\Index.html">Mouse Obstacle Race game</a>
+		  <a href=".\Instructions to play.html">Instructions to play</a>
+		  <a class="active" href=".\Leaderboard.html">Leaderboard</a>
+		  <a href=".\Log-in.html" id="logged-in">Log-in</a>
+		  <a href=".\Register.html">Register</a>
+		</div>
+
+
+		<h1 title = "This is the Leaderboard page">⭐ Leaderboard ⭐</h1>
+
+		<!-- Leaderboard Display -->
+		<table id="leaderboard-table">
+			<!-- include <thead> and <tbody> elements to enhance structure and semantics of your table. 
+			This helps with accessibility and makes it clearer which part of the table is what. -->
+			<thead>
+				<tr>
+					<th style="font-size:120%;">Rank</th>
+					<th style="width:50%;font-size:120%;">Name</th>
+					<th style="font-size:120%;">Score</th>
+				</tr>
+			</thead>
+			<tbody id="leaderboard-body">
+				<!-- Rows will be populated by renderLeaderboard function -->
+			</tbody>
+		</table>
+
+		<script>
+			window.onload = function() {
+				// Check if the user is logged in
+				if (sessionStorage.loggedinUsrName) {
+					let loggedIn = document.getElementById("logged-in");
+					loggedIn.innerHTML = "Player " + sessionStorage.loggedinUsrName;
+				}
+			};
+
+			// Call the renderLeaderboard function when the page is loaded
+			document.addEventListener("DOMContentLoaded", function() {
+				renderLeaderboard();
+			});
+		</script>
+
+	</body>
+</html>

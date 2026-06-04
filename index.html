@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang = "en" >
+	<head>
+	<!-- 
+	title of the pages of the website.
+	meta is used to have viewport of your page, which will give the browser instructions on how to control the page's dimensions and scaling
+	-->
+		<meta charset = "UTF-8"
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Mouse Obstacle Race game</title>
+		<link rel="icon" type="image/x-icon" href="..\Images\cheese.png">
+		<link rel="stylesheet" href="../CSS file/mystyle.css">
+		
+	</head>
+
+
+	<body>
+	<!-- Navigation bar -->
+		<div class="topnav">
+		  <a class="active" href=".\index.html">Mouse Obstacle Race game</a>
+		  <a href=".\instructions to play.html">Instructions to play</a>
+		  <a href=".\leaderboard.html">Leaderboard</a>
+		  <a href=".\log-in.html" id="logged-in">Log-in</a>
+		  <a href=".\register.html">Register</a>
+		</div>
+
+		<nav>
+			<!-- Content of the index page -->
+			<h1 title = "This is the home page"; class = "home "> Mouse Obstacle <br> Race game</h1>
+
+			<!-- body is what the user sees on screen, there are headings from h1 to h6 -->
+
+			<p> <b> Have a relaxing time by playing <br> this wonderful game and gain high  <br>
+			scores to be in the leaderboard !!!</p>
+			<a href =".\game.html">
+			<button type="button"; id= "play";> <strong> Play as Guest ></button> </strong> </a>
+		</nav>
+		
+		<!-- <br> tag defines a line break, and is an empty element without a closing tag -->
+		
+		<article>
+			<img src = "..\Images\mouse.png" width = "412" height = "412" 
+			style = "float:right;"> 
+			<!-- This is an example of inline css-->
+		</article>
+	
+		<script>
+			window.onload = function() {
+				// Check if the user is logged in
+				if (sessionStorage.loggedinUsrName) {
+					let loggedIn = document.getElementById("logged-in");
+					loggedIn.innerHTML = "Player " + sessionStorage.loggedinUsrName;
+	
+					let player = document.getElementById("play");
+					player.innerHTML = "Play as " + sessionStorage.loggedinUsrName;
+				}
+			};
+		</script>
+	</body>
+
+</html>
+
+
